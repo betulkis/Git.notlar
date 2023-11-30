@@ -1,0 +1,183 @@
+terminalde
+ls komutu list gibi içerisinde bulunduğumuz klasörleri ve dokümanları bize göster anlamına geliyor.Hangi klasörde bulunuyorsak ınun içindeki 
+
+klasörleri ve dosyaları gösterir.
+pwd nerde olduğunu anlamak için kullanılır.
+
+cd Documents yazdığımızda documents klasörünün içerisine gireriz onun içerisinde ls çalıştırısak da documentsin içindeki doyaları görürüz.
+
+cd komutu klasör değiştir anlamına gelir
+
+cd ..  bir önceki klasöre geri gel demektir.
+
+clear komutu ile ekran temizlenir.
+
+cd Desktop dediğimizde klasörün için gider.
+
+Desktop içindeyken mkdir GitKursu yazarsak desktopun içinde GitKursu adında klaör oluşur
+ 
+cd GitKursu yazarak klasörün içine girelim ve touch not.txt yazarak orada not.txt adında metin dosyası oluşturmuş olduk.
+
+
+rm not.txt  dosyayı kaldırmaya yarar
+(remove)
+
+rm sadece dosyaları siler.
+
+rm -rf GitKursu klasörü de siler
+
+rm -rf klaösrü de siler.
+--------------------------------
+kullanıcı adımızı git sistemine kaydetme:
+
+git config --global user.name "Betül Kış"
+
+bu kodu tekrar yazarak kullanıcı adı güncelleme de yapabilirsin
+
+git config user.name ile kullanıcının adını öğrenebilirsin çıktı olarak sana Betül Kış verir
+
+email için de kod:
+
+git config --global user.email abc@gmail.com
+ile email kaydedilir ve
+git config user.email 
+yazdığında çıktısı
+abc@gmail.com
+olur
+
+Git ve GitHub aynı şey değildir.
+Git versiyon kontrol sisteminin adı, GitHub bir portal web uygulamasıdır,git projelerini içinde saklamamızı sağlar
+
+git versiyon sistemi yazılım endüstrisinde her yerde kullanılır.
+
+commit gitteki bir terimdir.
+bir dosyayı yaptıktan sonra onu commit edersin tamamlayıp bir sonrakine geçersin
+
+arayüz tasarlandı,giriş ekranı yapıldı,veritabanı bağlantısı yapıldı, çıkış fonksiyonu yazıldı. Bu aşamalara geri dönebiliriz buna commit denir 
+
+
+sonrasında resim paylaşma fonks. ve mesajlaşma yazıldı adımları olsun ve bunlardan birini başka biri yapabilir ve aynı anda yapılabilirler. GitHub üzerinde projeyi yükleyerek a ve b kişileri aynı anda ilerleyerek commit atabilirler farklı farklı commitler gelecek bunlar a ve b kişilerinde olduğundan 2 dala ayrıldıklacakla buna branch denir
+resim paylaşma ve mesajlaşma adımlarına kadar tek bir
+mesajlaşma brancı demek burdan sonra başka bir kişi devralıyor demek  branch-dal 
+ve ilerde yeni bir committe birleşme yapılabilir.
+istenilen noktaya geri dönülebilir kimin ne yaptığı kayıtlı 
+
+bracnhlar 2kişi çalışırken değil tek başınayken de yapılabilir
+farklı kişilerle çalışırken de yapılabilir
+
+istediğimiz kadar branch açabiliriz birleştirme yapabiliriz sonradan 
+
+kodları yazıyoruzz sonra onu commitliyoruz 
+ 
+commit ve branch kavramları önemli
+
+(repo)repository git içeren genel proje.
+içerisine bir şey commitlediğimizde bilgiler kaydediliyor.
+
+--------------------------------
+git status : güncel git durumunu gösterir
+
+git init : Git init komutu bilgisayarınızda oluşturmuş olduğunuz bir klasörün Git'e tanımlanması için kullanılmaktadır. 
+
+git init çalıştımadan önce git status çalıştımalısın
+
+Bir klasöre gittiğinde (örneğin bu gitkursu klasörü olsun) gitle ilgili bir işlem yapmak istiyorsan git status'u çalıştırmalısın gitin burdaki güncel durumunu gösterir.
+
+git status dediğinde
+not a git repository derse  bunun herhangi bir gitle bağlantısı yok diyor
+(gitkursu klasörünün gitle herhangi bir bağlantısı yok)
+
+bunu gite bağlamak için giti bu klasörde aktif etmek için git init komutu yazılır
+git init çalıştırdığında bazı mesajlar verir 
+önemli olan şu ki git init yaptığımızda
+giti initialized etmiş oluyor yani başlatmış oluyor.
+
+git add kullanarak dosya vs ekleyebilirsin
+
+
+git status çalıştırdığında 
+No commits yet
+nothing to commit 
+yazıları geliyorsa
+
+git inniti çalıştırmaman gerek !!
+zaten initialized edilmiş 2 kere initialized edilirse kafası karışabilir 
+
+
+
+ls -la gizli klasörleri de gösterir
+
+git, .git adında gizli klasör açıyor ve yapılan tüm işlemleri oraya kaydediyor
+
+yanlış bir yere git eklersen rm -rf .git ile bunu silebilirsin
+
+********************************
+$ pwd : bulunulan dizin gösterilir
+$ ls : bulunulan klasördeki dosyalar listeler
+$ ctrl + l : temizleme yapar
+
+Tüm versiyonlar hakkında bilgileri gösterir
+$ git log 
+
+
+Değişikliklerin takibi 
+$ git diff
+
+
+$ git diff --staged
+depo ile stage area arasındaki farklılıkları gösterir.
+
+mv komutu ile hem yeniden isimlendirme hem de taşıma işlemi yapılır.
+
+git mv isim.txt yeniIsim.txt   //Adlandırma
+git mv JSSon.js dosyalar/      //Taşıma
+
+
+Çok sayıda log dosyası vs varsa o döngüden çıkmak için "q" (quit) tuşuna basılır.
+
+Değişiklik durumu (çalışma dizini) ve Silinen dosyayı geri getirme (çalışma dizini)
+git checkout -- dosyaAdi
+
+
+Değişikliği Geri Alma
+git reset HEAD dosyaAdi
+
+Yeni Dosya Ekleme
+touch README.md
+
+Kendimizde Bulunan Bir Projeyi Remote'a Entegre Etmek
+echo "# Git.notlar" >> README.md
+
+  git remote add origin https://github.com/betulkis/Git.notlar.git
+  git push -u origin --all
+  git push -u origin --tags
+ 
+
+cat >> gitignore $ dosyaAdi
+
+gitignore daha sonra elle değiştirilebilir.
+
+ 
+Dalları göstermek için
+$ git branch
+
+Remotetaki branchları çekmek için
+$ git branch --all
+
+Yeni Branch(Dal)
+$ git branch yenidal
+
+
+watch eğer aktif edersek projede değişiklik olunca sayfamızda görünür
+
+
+gitlab
+githubdan teknik olarak farklı yok
+avantajı ücretsiz private proje oluşturabiliyoruz
+
+git branch yazarak mevcut dallar gösterilir. Github'daki branch'ları görmek için git branch --all yazarız
+
+Birinin projesinde watch seçerseniz projedeki değişikliklerde bildirim alırsınız.
+star seçilirse hem beğendiğinizi hemde daha sonra bakmak için yer imi ekler.
+fork seçeneğinde projenin bir kopyasını kendinize eklemiş olursunuz.
+issues seçeneği projenizde herhangi sorunları belirtmek için kullanılır.
